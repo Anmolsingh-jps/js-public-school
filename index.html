@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J S Public School</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#000;
+color:#eee;
+}
+
+header{
+background:linear-gradient(90deg,#000,#b88a00);
+padding:60px 20px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:42px;
+color:#ffd700;
+letter-spacing:2px;
+}
+
+header p{
+color:#ddd;
+font-size:18px;
+margin-top:10px;
+}
+
+.hero-buttons{
+text-align:center;
+margin:30px 0;
+}
+
+.hero-buttons button{
+background:#b88a00;
+color:#000;
+border:none;
+padding:15px 28px;
+margin:10px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.hero-buttons button:hover{
+background:#d4a017;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.section{
+background:#0d0d0d;
+border:1px solid #b88a00;
+border-radius:10px;
+padding:25px;
+margin-bottom:25px;
+}
+
+.section h2{
+color:#ffd700;
+margin-top:0;
+}
+
+ul{
+line-height:1.7;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:6px;
+border:none;
+}
+
+button.pay{
+background:#b88a00;
+color:#000;
+border:none;
+padding:14px 22px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+button.pay:hover{
+background:#d4a017;
+}
+
+a{
+color:#ffd700;
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:20px;
+color:#aaa;
+font-size:14px;
+}
+</style>
+
+<script>
+function sendAdmission(){
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var cls=document.getElementById("class").value;
+
+if(name=="" || phone==""){
+alert("Please fill all details");
+return;
+}
+
+var msg="Admission Request%0AStudent Name: "+name+"%0AParent Phone: "+phone+"%0AClass: "+cls;
+window.open("https://wa.me/919628007238?text="+msg);
+}
+
+function payFees(){
+var amount=document.getElementById("classSelect").value;
+
+if(amount==""){
+alert("Please select class");
+return;
+}
+
+window.location.href="upi://pay?pa=anmolsingh7@ptyes&am="+amount;
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>J S PUBLIC SCHOOL</h1>
+<p>Quality Education For Bright Future</p>
+</header>
+
+<div class="hero-buttons">
+<button onclick="document.getElementById('admission').scrollIntoView()">Request Admission</button>
+<button onclick="document.getElementById('fees').scrollIntoView()">Pay Fees</button>
+</div>
+
+<div class="container">
+
+<div class="section">
+<h2>About School</h2>
+
+<p>
+At <b>J S Public School</b>, we provide a safe and inspiring learning environment for young students. Our aim is to build strong academic foundations while encouraging creativity, curiosity and confidence.
+</p>
+
+<p>
+We believe that every child has unique potential. Our teachers use modern teaching methods and activity-based learning to help students understand concepts clearly and develop a love for learning.
+</p>
+
+<p>
+जे एस पब्लिक स्कूल बच्चों को सुरक्षित और प्रेरणादायक वातावरण में गुणवत्तापूर्ण शिक्षा प्रदान करता है। हमारा उद्देश्य बच्चों की मजबूत शैक्षिक नींव तैयार करना है ताकि वे भविष्य में सफलता प्राप्त कर सकें।
+</p>
+</div>
+
+<div class="section">
+<h2>Classes Offered</h2>
+
+<p>
+J S Public School offers classes from <b>Class 1 to Class 5</b>. Our curriculum focuses on building strong fundamentals in reading, writing, mathematics and general knowledge.
+</p>
+
+<ul>
+<li>Concept Based Learning</li>
+<li>Activity Based Teaching</li>
+<li>Strong Reading and Writing Skills</li>
+<li>Basic Mathematics and Logical Thinking</li>
+<li>Individual Attention to Students</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Facilities</h2>
+
+<ul>
+<li><b>Spacious Classrooms</b> – Comfortable learning environment.</li>
+<li><b>Well Equipped Library</b> – Books to develop reading habits.</li>
+<li><b>Computer Education</b> – Students learn basic computer skills.</li>
+<li><b>AI Awareness</b> – Introduction to modern technology.</li>
+<li><b>Activity Based Learning</b> – Practical and interactive teaching methods.</li>
+<li><b>Playground</b> – Safe place for sports and physical activities.</li>
+<li><b>Science Learning Activities</b> – Basic experiments and demonstrations.</li>
+</ul>
+
+</div>
+
+<div class="section">
+<h2>Admissions Open</h2>
+
+<p>
+Admissions are open for the upcoming academic session. Parents who want quality education for their children in a disciplined and supportive environment are encouraged to apply.
+</p>
+
+<p>
+Admission Process:
+</p>
+
+<ul>
+<li>Fill the admission request form.</li>
+<li>Contact the school for more information.</li>
+<li>Visit the school for final admission confirmation.</li>
+</ul>
+</div>
+
+<div class="section" id="admission">
+<h2>Admission Request</h2>
+
+<input id="name" placeholder="Student Name">
+<input id="phone" placeholder="Parent Phone">
+
+<select id="class">
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+</select>
+
+<button class="pay" onclick="sendAdmission()">Send Admission Request</button>
+
+</div>
+
+<div class="section" id="fees">
+<h2>Online Fee Payment</h2>
+
+<p>Select your class and pay the monthly fee using UPI.</p>
+
+<select id="classSelect">
+<option value="">Select Class</option>
+<option value="300">Class 1 – ₹300</option>
+<option value="300">Class 2 – ₹300</option>
+<option value="300">Class 3 – ₹300</option>
+<option value="400">Class 4 – ₹400</option>
+<option value="500">Class 5 – ₹500</option>
+</select>
+
+<button class="pay" onclick="payFees()">Pay Using UPI</button>
+
+<p>Or Scan QR Code</p>
+<img src="upi-qr.jpg" width="220">
+
+</div>
+
+<div class="section">
+<h2>Contact Us</h2>
+
+<p>Email: <a href="mailto:anmolsingh979299@gmail.com">anmolsingh979299@gmail.com</a></p>
+
+<p>
+Phone: 
+<a href="tel:9628007238">9628007238</a> ,
+<a href="tel:9451029986">9451029986</a>
+</p>
+
+<p>
+Location: Kotiya, Ahirauli Bujurg, Balrampur, Uttar Pradesh – 271306
+</p>
+
+</div>
+
+</div>
+
+<footer>
+J S Public School – Primary School (Class 1 to 5)  
+Providing quality education and strong foundation for young learners.
+</footer>
+
+</body>
+</html>
